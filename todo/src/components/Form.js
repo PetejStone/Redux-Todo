@@ -1,18 +1,23 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import {addTask} from '../actions';
 class Form extends React.Component {
     constructor() {
         super();
         this.state = {
-            todos: {
-                todo: ''
-            }
-        }    
-    }
+            todo: ''  
+    }}
 
     handleInputChange = e => {
-        console.log(e.target)
+        this.setState({todo: e.target.value})
       };
+
+      addTodo = e => {
+          e.preventDefault();
+          this.props.addTask(this.state.todo)
+          this.setState({todo: ''})
+        
+      }
 
     render() {
         return (
@@ -34,4 +39,12 @@ class Form extends React.Component {
     }
 }
 
-export default Form;
+const mapStateToProps = state => {
+    return {
+      todos: state.todos
+    };
+  };
+export default connect(
+    mapStateToProps,
+    {addTask}
+  )(Form);

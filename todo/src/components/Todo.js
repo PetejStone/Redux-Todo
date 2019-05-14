@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {addTask} from '../actions'
 
 class Todo extends React.Component {
     constructor() {
@@ -29,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { }
+    {addTask}
   )(Todo);
