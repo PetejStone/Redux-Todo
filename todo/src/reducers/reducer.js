@@ -9,7 +9,7 @@ const stateTree = {
 }
 
 function reducer(state=stateTree, action) {
-
+    return state;
 }
 
 export default reducer;

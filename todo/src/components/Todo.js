@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class Todo extends React.Component {
     constructor() {
@@ -8,9 +9,25 @@ class Todo extends React.Component {
 
     render() {
         return (
-            <h1>Testing</h1>
-        
+            <div>
+                {this.props.todos.map( todo => (
+                    <div>
+                        <h3>{todo.value}</h3>
+                        <p> {todo.value === '' ? null : `Completed: ${todo.completed.toString()}`}</p>
+                    </div>
+                ))}
+            </div>
+           
         )}
 }
 
-export default Todo;
+const mapStateToProps = state => {
+    return {
+      todos: state.todos
+    };
+  };
+
+export default connect(
+    mapStateToProps,
+    { }
+  )(Todo);
