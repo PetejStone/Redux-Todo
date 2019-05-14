@@ -1,4 +1,4 @@
-import {ADD_TASK, TOGGLE_COMPLETE} from '../actions';
+import {ADD_TASK, TOGGLE_COMPLETE, DELETE_TASK} from '../actions';
 const stateTree = {
     todos: [
         {
@@ -29,6 +29,12 @@ function reducer(state=stateTree, action) {
                     return todo;
                 })
             }
+            case DELETE_TASK:
+                return {
+                    ...state,
+                    todos: state.todos.filter(todo => todo.id !== action.payload)
+                    
+                }
         default: 
             return state;
     }
