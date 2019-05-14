@@ -1,4 +1,4 @@
-
+import {ADD_TASK} from '../actions';
 const stateTree = {
     todos: [
         {
@@ -9,7 +9,15 @@ const stateTree = {
 }
 
 function reducer(state=stateTree, action) {
-    return state;
+    switch(action.type) {
+        case ADD_TASK:
+            return {
+                ...state,
+                todos: [...state.todos, {value: action.payload, completed: false}]
+            }
+        default: 
+            return state;
+    }
 }
 
 export default reducer;
