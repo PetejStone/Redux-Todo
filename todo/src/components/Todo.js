@@ -20,7 +20,7 @@ class Todo extends React.Component {
             <div>
                 {this.props.todos.map( (todo, index) => (
                     <div className="task" key={index} onClick={() => this.toggleComplete(todo.id)}>
-                       
+                        <p style={{display:'none' }} >{todo.id = index}</p>
                         <h3>{todo.value}</h3>
                         <p> {todo.value === '' ? null : `Completed: ${todo.completed.toString()}`}</p>
                         

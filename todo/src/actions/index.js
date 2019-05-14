@@ -11,7 +11,7 @@ export const addTask = newTask => {
   };
 
   export const toggleComplete = id => {
-    console.log(id)
+    
     return {
       type: TOGGLE_COMPLETE,
       payload: id

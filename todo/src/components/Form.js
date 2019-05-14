@@ -16,7 +16,7 @@ class Form extends React.Component {
           e.preventDefault();
           this.props.addTask(this.state.todo)
           this.setState({todo: ''})
-        
+          document.querySelector('#input').value = ''
       }
 
     render() {
@@ -29,6 +29,7 @@ class Form extends React.Component {
                 value={this.state.name}
                 name="name"
                 type="text"
+                id="input"
                 required
             />
             
