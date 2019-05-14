@@ -1,0 +1,57 @@
+.task {
+    background-color: navy;
+    color: white;
+    text-shadow: -2px -2px -2px black;
+    border-radius: 15px;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}
+
+.task button {
+    width: 50%;
+    margin: 0 auto;
+    background-color: red;
+    height: 2rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.task-list {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.todo-form{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.todo-form input {
+    height: 1rem;
+    font-size: 1rem
+}
+
+.todo-form button {
+    width: 100%;
+    margin: 0 auto;
+    background-color: green;
+    height: 2rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+}

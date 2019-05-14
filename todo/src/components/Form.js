@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addTask} from '../actions';
+import './todo.css'
+
 class Form extends React.Component {
     constructor() {
         super();
